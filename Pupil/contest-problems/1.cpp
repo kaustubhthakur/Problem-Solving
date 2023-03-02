@@ -2,24 +2,35 @@
 using namespace std;
 void solve()
 {
-int n,m;
-cin>>n>>m;
-vector<int>a(m);
-for(int i=0;i<m;i++) cin>>a[i];
+    int n;
+    cin>>n;
+    string str;
+    string st ="meowMEOW";
+    for (int i = 0; i < n; i++)
+    {
+        cin>>str[i];
+    }
+    sort(str.begin(),str.end());
+    sort(st.begin(),st.end());
+    for (int i = 0; i < n; i++)
+    {
+        
+    if(st==str)
 
-queue<int>que;
-
-
+        {
+            cout << "YES" << endl;
+            return;
+        }
+    }
+    cout<<"NO"<<endl;
 }
 int main()
 {
 
-int t;
-cin>>t;
-while(t--)
-    solve();
-
-
+    int t;
+    cin >> t;
+    while (t--)
+        solve();
 
     return 0;
 }
