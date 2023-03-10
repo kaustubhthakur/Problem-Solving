@@ -1,35 +1,35 @@
 #include <bits/stdc++.h>
+
 using namespace std;
-void solve()
-{
-string str;
-int ans =0;
-map<int,char> mp;
-for(int i=0;i<str.length();i++)
-{
-    cin>>str[i]; 
-     mp[str[i]]++;
-}
 
-for(int i=0;i<str.length();i+=2)
-{
-  
-    if(mp[str[i]])
-    {
-        ans+=1;
+#define forn(i, n) for (int i = 0; i < int(n); i++)
+#define sz(v) (int)v.size()
+#define all(v) v.begin(),v.end()
+#define eb emplace_back
+
+
+
+void solve() {
+    string s; cin >> s;
+    set<char> v;
+    int ans = 0;
+    for (int i = 0; i < sz(s); i++) {
+        v.insert(s[i]);
+        if (sz(v) > 3) {
+            ans++;
+            v.clear();
+            v.insert(s[i]);
+        }
     }
-}
-cout<<ans<<endl;
-}
-int main()
-{
-int t;
-cin>>t;
-while(t--)
-{
-    solve();
+    if (!v.empty()) ans++;
+    cout << ans << endl;
 }
 
+int main() {
+    int t;
+    cin >> t;
 
-    return 0;
+    forn(tt, t) {
+        solve();
+    }
 }
